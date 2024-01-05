@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+
+
+// LOGIN FORM --------------------------------------------
+  .LoginForm{
+
+    padding: 70px;
+    border-radius: 15px; 
+    background-color: rgba(50, 35, 35, 0.453);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    >div{
+      display: flex;
+      flex-direction: column;
+      input{
+        background-color: black;
+        outline: none;
+        border: none;
+        color: inherit;
+        padding: 5px;
+      }
+      
+    }
+    button{
+      cursor: pointer;
+    }
+  }
+// END LOGIN FORM -----------------
+
+
+
+.Dashboard{
+
+
+  .MainNav{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    user-select: none;
+    span{
+      cursor: pointer;
+      position: relative;
+      transition: .4s;
+
+      &:hover{
+        color: gray;
+      }
+    }
+
+  }
+  
+  .OptionsBox{
+    
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    justify-content: center;
+    gap: 25px;
+    .option{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      *{
+        font-size: 3em;
+      }
+  
+      span{
+        font-size: 1em;
+        user-select: none;
+      }
+    }
+  
+    .option{
+      transition: .4s;
+      cursor: pointer;
+      &:hover{
+        
+        transform: translateY(-10px);
+  
+      }
+    }
+    
+  }
+
+  
+  }
+
+}
+
+
+
