@@ -1,0 +1,42 @@
+
+$window_opacity: 0.366;
+.Window_{
+    background: rgba(2, 0, 36, 0.362);
+    background: linear-gradient(0deg, rgba(2, 0, 36, $window_opacity) 0%, rgba(9, 9, 121, $window_opacity) 35%, rgba(0, 213, 255, $window_opacity) 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 10px 3px black;
+    height: 100%;
+    
+}
+
+.News{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .MessBox{
+        overflow-y: auto;
+        height: 100%;
+    }
+}
+
+.Fview{
+    width: clamp(200px, 80%, 1200px);
+    height: 75vh;
+    display: flex;
+
+
+    .div{
+        height: 100%;
+    }
+    .contactFview{
+        height: 75vh;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+    }
+    .NewsBox{
+        flex: 1;
+        height: 75vh;
+    }
+}
+

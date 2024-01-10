@@ -1,13 +1,15 @@
 import React from 'react'
+import { appsNames } from './AppsBox'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-
-const AppBox = ({appName}: {appName: string}) => {
+const AppBox = ({appName}: {appName: appsNames}) => {
   return (
-    <div className='AppBox'>
+<div>
+  {/* Treść diva */}
+</div>
         
-    </div>
   )
 }
 

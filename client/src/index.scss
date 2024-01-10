@@ -18,3 +18,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar {
+  width: 9px; /* Szerokość paska przewijania */
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #888; /* Kolor tła ścieżki przewijania */
+}
+::-webkit-scrollbar-thumb {
+  background: #555; /* Kolor suwaka przewijania */
+  border-radius: 10px; /* Zaokrąglenie rogów suwaka */
+}
+
