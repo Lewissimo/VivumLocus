@@ -10,17 +10,7 @@ const Fview = () => {
   return (
     <div className='Fview row'>
         
-        <div className='contactFview'>
-            
-            <Window>
-                <MessageIcon />
-            </Window>
-            <Window>
-                <LocalPhoneIcon />
-            </Window>
-        </div>
         <div className='NewsBox'>
-            
             <Window>
                 <News />
             </Window>

@@ -4,7 +4,6 @@ import NewsMessage from './NewsMessage';
 
 const News = () => {
   return (
-      <Window>
         <div className='News'>
 
           <h2>Aktualności</h2>
@@ -20,7 +19,6 @@ const News = () => {
           </div>
         </div>
       
-      </Window>
 
   )
 }

@@ -1,12 +1,12 @@
-
-$window_opacity: 0.366;
+@import "../../variables";
+$window_opacity: 0.166;
 .Window_{
-    background: rgba(2, 0, 36, 0.362);
-    background: linear-gradient(0deg, rgba(2, 0, 36, $window_opacity) 0%, rgba(9, 9, 121, $window_opacity) 35%, rgba(0, 213, 255, $window_opacity) 100%);
-    border-radius: 14px;
+    background-color: $color1;
     box-shadow: 0 4px 10px 3px black;
     height: 100%;
-    
+    color: white;
+    border-radius: 10px;
+    letter-spacing: 0.04em;
 }
 
 .News{
@@ -14,26 +14,17 @@ $window_opacity: 0.366;
     display: flex;
     flex-direction: column;
     .MessBox{
+        margin: 0 20px;
+        overflow: hidden;
         overflow-y: auto;
         height: 100%;
     }
 }
 
 .Fview{
-    width: clamp(200px, 80%, 1200px);
-    height: 75vh;
-    display: flex;
-
-
-    .div{
-        height: 100%;
-    }
-    .contactFview{
-        height: 75vh;
-        width: 350px;
-        display: flex;
-        flex-direction: column;
-    }
+    width: clamp(200px, 100%, 1200px);
+    min-height: 50vh;
+    max-height: 75vh;
     .NewsBox{
         flex: 1;
         height: 75vh;

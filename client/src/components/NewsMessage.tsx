@@ -9,7 +9,9 @@ const NewsMessage = () => {
             <p className='col-12'>
                 W dniu Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reprehenderit ducimus ea neque, exercitationem rerum! Reiciendis consequatur hic aspernatur, esse exercitationem laboriosam, molestias eligendi harum animi nihil provident suscipit ipsa.
             </p>
+        <hr/>
         </li>
+
     </>
   )
 }

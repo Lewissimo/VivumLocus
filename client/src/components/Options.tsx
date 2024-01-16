@@ -4,14 +4,17 @@ import ChairIcon from '@mui/icons-material/Chair';
 import BuildIcon from '@mui/icons-material/Build';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
-
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 const Options = () => {
   return (
     <div className='OptionsBox'>
 
 
         <div className='option'>
-
+            <AnnouncementIcon />
+            <span>Aktualności</span>
+        </div>
+        <div className='option'>
             <PermContactCalendarIcon />
             <span>Kontakt</span>
         </div>
