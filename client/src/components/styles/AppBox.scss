@@ -25,6 +25,16 @@ $window_opacity: 0.166;
     width: clamp(200px, 100%, 1200px);
     min-height: 50vh;
     max-height: 75vh;
+    .swiper {
+        padding: 20px;
+        @media (max-width: $breakPoint) {
+            padding: 10px 5px;
+        }
+    }
+    .swiper-slide {
+        height: 75vh;
+        // inne style specyficzne dla tego Swiper
+      }
     .NewsBox{
         flex: 1;
         height: 75vh;

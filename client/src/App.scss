@@ -77,12 +77,13 @@
   }
 
   .Options{
-    // width: 100%;
     height: 12vh;
     overflow: visible;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     .OptionsBox{
-
-      
       display: flex;
       justify-content: center;
       border-radius: 10px;
@@ -90,18 +91,30 @@
       margin: 0 auto;
       padding: 10px;
       gap: 25px;
+      .active{
+        color: $color2;
+      }
       .option{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         *{
+          @media (max-width: $breakPoint){
+            
+            font-size: 1.6em;
+        }
+
           font-size: 3em;
         }
         
         span{
           font-size: 1em;
           user-select: none;
+          @media (max-width: $breakPoint){
+            font-size: .5em;
+        }
+
         }
       }
       
