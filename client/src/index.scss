@@ -1,17 +1,13 @@
 @import "./variables";
 
-
+@font-face {
+  font-family: mainAppFont;
+  src: './Fonts/RobotoSlab-VariableFont_wght.ttf';
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // background-image: url('./assets/bg5.jpg');
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  font-family: mainAppFont !important;
+  font-weight: 100 !important;
   height: 100vh;
   width: 100%;
   background-color: $color3 !important;

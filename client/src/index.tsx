@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { SwiperContextProvider } from './components/context/SwiperContext';
+import { YourStaffContextProvider } from './components/Apps/YourStaff/YourStaffContext';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <YourStaffContextProvider>
       <SwiperContextProvider>
         <App />
       </SwiperContextProvider>
+    </YourStaffContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

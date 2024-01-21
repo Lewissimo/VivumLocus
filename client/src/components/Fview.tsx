@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore from 'swiper';
 import { Mousewheel } from 'swiper/modules';
@@ -18,7 +18,22 @@ SwiperCore.use([Mousewheel]);
 
 const Fview = () => {
   const slideContext = useContext(SwiperContext);
-  
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        slideContext?.swiper?.slidePrev();
+      }
+      if (e.key === 'ArrowRight') {
+        slideContext?.swiper?.slideNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const [blockedHandle, setBlocHandle] = useState(false);
   const handleMousewheel = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -43,6 +58,13 @@ const Fview = () => {
       }, 200);
     }
   };    
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    console.log('asd')
+    if (e.key === 'ArrowLeft') {
+      console.log('Kliknięto strzałkę w lewo');
+    }
+  }
 
   return (
     <div className='Fview row'>

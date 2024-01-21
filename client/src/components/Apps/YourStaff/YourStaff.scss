@@ -1,0 +1,38 @@
+.YourStaffDashboardBox{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.YourStaffDashboard{
+    
+    max-height: 75vh;
+    .YourStaffOption{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        transition: .3s;
+        *:not(span){
+            font-size: 5em;
+        }
+        &:hover{
+            cursor: pointer;
+
+            transform: translateY(-15px);
+        }
+    }
+    
+}
+.AppWindow{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        .GoBack{
+            *{
+                cursor: pointer;
+            }
+            text-align: left;
+        }
+    }
