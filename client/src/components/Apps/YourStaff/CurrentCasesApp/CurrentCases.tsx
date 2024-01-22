@@ -3,7 +3,9 @@ import AppWindow from '../AppWindow'
 
 const CurrentCases = () => {
   return (
-    <AppWindow>CurrentCases</AppWindow>
+    <AppWindow>
+      <h2>Sprawy w toku</h2>
+    </AppWindow>
   )
 }
 

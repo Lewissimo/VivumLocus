@@ -10,7 +10,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
     <YourStaffContextProvider>
       <SwiperContextProvider>
@@ -18,7 +17,6 @@ root.render(
       </SwiperContextProvider>
     </YourStaffContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 reportWebVitals();

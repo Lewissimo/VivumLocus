@@ -20,6 +20,7 @@ const Fview = () => {
   const slideContext = useContext(SwiperContext);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      console.log('in')
       if (e.key === 'ArrowLeft') {
         slideContext?.swiper?.slidePrev();
       }
@@ -27,7 +28,7 @@ const Fview = () => {
         slideContext?.swiper?.slideNext();
       }
     };
-
+    
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
@@ -58,13 +59,6 @@ const Fview = () => {
       }, 200);
     }
   };    
-
-  const handleKeyDown = (e: KeyboardEvent) => {
-    console.log('asd')
-    if (e.key === 'ArrowLeft') {
-      console.log('Kliknięto strzałkę w lewo');
-    }
-  }
 
   return (
     <div className='Fview row'>
