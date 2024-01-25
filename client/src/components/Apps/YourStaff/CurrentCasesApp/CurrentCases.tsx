@@ -5,6 +5,7 @@ const CurrentCases = () => {
   return (
     <AppWindow>
       <h2>Sprawy w toku</h2>
+      
     </AppWindow>
   )
 }

@@ -24,6 +24,51 @@ const Documents = () => {
               <iframe src={file} width="150" height="200" title='umowa'/>
               <span>Umowa</span>
         </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
+        <div className='document col-12 col-sm-6 col-lg-3 d-flex flex-column'>
+            <a href={file} target='_blank' rel="noopener noreferrer" aria-label="Otwórz Umowę"></a>
+              <iframe src={file} width="150" height="200" title='umowa'/>
+              <span>Umowa</span>
+        </div>
         <div className='folder col-12 col-sm-6 col-lg-3 d-flex align-items-center'>
           <Folder />
         </div>
