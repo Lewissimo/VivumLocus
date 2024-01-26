@@ -20,7 +20,6 @@ const Fview = () => {
   const slideContext = useContext(SwiperContext);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      console.log('in')
       if (e.key === 'ArrowLeft') {
         slideContext?.swiper?.slidePrev();
       }
@@ -34,7 +33,7 @@ const Fview = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [slideContext?.swiper]);
 
   const [blockedHandle, setBlocHandle] = useState(false);
   const handleMousewheel = (e: React.WheelEvent<HTMLDivElement>) => {

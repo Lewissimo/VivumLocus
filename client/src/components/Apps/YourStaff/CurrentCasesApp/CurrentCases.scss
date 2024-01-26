@@ -1,0 +1,41 @@
+.expand-toggle {
+    display: none;
+  }
+  
+  
+  .expand-label {
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+
+  }
+  
+  .expanded-content {
+    height: 0;
+    opacity: 0;
+    transition: .3s;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .expand-toggle:checked + .expand-label + .expanded-content {
+    height: 60vh;
+    opacity: 1;
+  }
+
+  nav{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  .SwiperBox{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 60vh;
+    *{
+        overflow: visible;
+    }
+  }

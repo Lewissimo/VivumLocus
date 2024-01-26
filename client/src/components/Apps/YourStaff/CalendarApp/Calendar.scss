@@ -1,0 +1,51 @@
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.rbc-month-row, .rbc-row-bg{
+    animation: .4s show;
+}
+.calendar-container {
+    display: flex;
+    flex-direction: row; /* Ustawia elementy poziomo */
+  }
+  
+  .toolbar-vertical {
+    display: flex;
+    flex-direction: column; /* Ustawia elementy pionowo */
+    justify-content: space-around; /* Rozkłada elementy równomiernie */
+    align-items: center; /* Wyśrodkowuje elementy w pionie */
+    height: 100%; /* Wysokość dopasowana do kontenera */
+    /* Dalsze style */
+  }
+  .rbc-today{
+    background-color: black;
+  }
+  .rbc-off-range-bg{
+    background-color: gray;
+  }
+
+  .Toolbar{
+    position: relative;
+    height: 40px;
+    button{
+        color: white;
+        background-color: unset;
+        border: none;
+        &:hover{
+            color: gold;
+        }
+    }
+    display: flex;
+    justify-content: space-between;
+    .currentDate{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }    
+    }

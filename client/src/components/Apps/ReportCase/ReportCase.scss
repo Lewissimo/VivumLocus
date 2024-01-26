@@ -1,10 +1,16 @@
 #reportCase{
+    width: clamp(300px, 80%, 1200px);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 60vh;
+    justify-content: space-evenly;
     text-align: center;
+
+    .titleBox{
+     width: 100%;   
+    }
+
     input{
         text-align: center;
         border-radius: 10px;
@@ -13,10 +19,11 @@
     textarea{
         padding: 8px;
         border-radius: 10px;
-        width: 300px;
-        height: 200px;
+        height: 100px;
         resize: none;
     }
+    // #tastDescriptionLabel{
+    // }
     #tastPhoto{
         display: none;
     }
@@ -26,14 +33,17 @@
         &:hover{
             box-shadow: 0 0 0px 2px white;
         }
-        margin: 10px;
-        padding: 10px;
-        border-radius: 50%;
+
     }
 
+    // .PhotosBox{
+    //     height: 200px;
+    // }
+
     label{
-        
-        transition: 1s;
+        height: 50px;
+
+        transition: .4s;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,8 +53,9 @@
     button{
         background-color: black;
         border: none;
+        transition: .4s;
+
         padding: 10px;
-        border-radius: 50%;
         &:hover{
             box-shadow: 0 0 0px 2px white;
         }

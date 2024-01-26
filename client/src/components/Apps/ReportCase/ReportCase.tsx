@@ -52,20 +52,23 @@ const ReportCase = () => {
 
 
   return (
-    <div>
+    <div className='ReportCaseBox'>
       <h2>
         Zgłość sprawę
       </h2>
       <form id='reportCase'>
-        <label htmlFor='title'>Tytuł</label>
-        <input type='text' id='title' required minLength={3} maxLength={15}/>
-        <label htmlFor='taskDescription'>Opis</label>
+        <div className='titleBox'>
+          <label htmlFor='title'>Tytuł</label>
+          <input type='text' id='title' required minLength={3} maxLength={15}/>
+        </div>
+        <label htmlFor='taskDescription' id='tastDescriptionLabel'>Opisz dokładnie powstały problem</label>
         <textarea id='taskDescription' required></textarea>
         <label htmlFor='tastPhoto' id='fileLabel' onDragOver={handleDragOver}
-        style={dragCounter ? {width: '300px', height: '300px'} 
-        : {width: '120px', height: '70px', position: 'static'}}>{dragCounter ? "Upuść tutaj" : "Wybierz zdjęcie"}</label>
+        style={dragCounter ? { height: '300px'} 
+        : {height: '70px', position: 'static'}}>{dragCounter ? "Upuść tutaj" : "Wybierz zdjęcie"}</label>
         <input type='file' id='tastPhoto' required multiple   
          onChange={handleFileChange} />
+         <div className='PhotosBox'></div>
         <button type='submit'><SendIcon /></button>
       </form>
     </div>
