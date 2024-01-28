@@ -1,0 +1,30 @@
+.MainView{
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    width: 100svw;
+    
+    div{
+        display: flex;
+        justify-content: center;
+        &:first-child{
+            flex: 1;
+            min-height: 40px;
+        }
+        &:nth-child(2){
+            flex: 5;
+            min-height: 100px;
+            div{
+                text-align: center;
+                width: clamp(300px, 90% , 1300px);
+            }
+        
+        }
+    
+        &:last-child{
+            flex: 1;
+            min-height: 40px;
+        }
+    }
+    
+}

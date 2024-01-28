@@ -6,7 +6,8 @@
     height: 60vh;
     justify-content: space-evenly;
     text-align: center;
-
+    border: 2px solid white;
+    border-radius: 400px;
     .titleBox{
      width: 100%;   
     }
@@ -19,6 +20,8 @@
     textarea{
         padding: 8px;
         border-radius: 10px;
+        width: 70%;
+        margin: 0 auto;
         height: 100px;
         resize: none;
     }
@@ -30,6 +33,9 @@
     #fileLabel{
         background-color: black;
         color: white;
+        width: 70%;
+        margin: 5px auto;
+        border-radius: 40px;
         &:hover{
             box-shadow: 0 0 0px 2px white;
         }
@@ -38,7 +44,7 @@
 
     // .PhotosBox{
     //     height: 200px;
-    // }
+    // }    
 
     label{
         height: 50px;
@@ -54,6 +60,10 @@
         background-color: black;
         border: none;
         transition: .4s;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        border-radius: 50%;
 
         padding: 10px;
         &:hover{
