@@ -5,18 +5,20 @@ import { Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 
 import Window from './Window';
-import News from './News';
-import Contact from './Apps/Contact/Contact';
-import YourStaff from './Apps/YourStaff/YourStaff';
-import ReportCase from './Apps/ReportCase/ReportCase';
-import Inventory from './Apps/Inventory/Inventory';
-import Messages from './Apps/Messages/Messages';
+import News from '../pages/Apps/News/News';
+import Contact from '../pages/Apps/Contact/Contact';
+import YourStaff from '../pages/Apps/YourStaff/YourStaff';
+import ReportCase from '../pages/Apps/ReportCase/ReportCase';
+import Inventory from '../pages/Apps/Inventory/Inventory';
+import Messages from '../pages/Apps/Messages/Messages';
 import SwiperContext from './context/SwiperContext';
+import { AppsContext, CurrentAppEnum } from '../pages/Templates/MainViewContext';
 
 SwiperCore.use([Mousewheel]);
 
 
 const Fview = () => {
+  const Apps = useContext(AppsContext);
   const slideContext = useContext(SwiperContext);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -59,13 +61,36 @@ const Fview = () => {
     }
   };    
 
+  
+
   return (
     <div className='Fview row'>
-
+      
       <div className='NewsBox' onWheel={handleOnWheelBlock}>
         <Swiper
             onSlideChange={(swiper: SwiperCore)=>{
               slideContext?.setActiveSlide(swiper.activeIndex);
+              switch (swiper.activeIndex){
+                case 0:
+                  Apps?.setCurrentApp(CurrentAppEnum.News);
+                  break;
+                case 1:
+                  Apps?.setCurrentApp(CurrentAppEnum.Contact);
+                  break;
+                case 2:
+                  Apps?.setCurrentApp(CurrentAppEnum.YourStaff);
+                  break;
+                case 3:
+                  Apps?.setCurrentApp(CurrentAppEnum.ReportCase);
+                  break;
+                case 4:
+                  Apps?.setCurrentApp(CurrentAppEnum.Inventory);
+                  break;
+                case 5:
+                  Apps?.setCurrentApp(CurrentAppEnum.Messages);
+                  break;
+
+              }
             }}
             onSwiper={(swiper: SwiperCore) => slideContext?.setSwiper(swiper)}
             spaceBetween={50}

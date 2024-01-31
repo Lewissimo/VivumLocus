@@ -1,0 +1,85 @@
+
+
+
+.ChatApp{
+    display: flex;
+    margin: 0 10px;
+    justify-content: center;
+    border-radius: 20px;
+    height: 100%;
+    padding: 10px;
+    color: white;
+    .AdressesBoard{
+        border: 2px solid rgb(40, 38, 38);
+        background-color: #002828;
+        padding: 20px;
+        flex: 1;
+        min-width: 200px;
+        border-radius: 20px 20px 0 20px;
+
+    }
+
+    .ChatBox{
+
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        .Chat{
+            display: flex;
+            flex-direction: column;
+            flex: 5;
+            overflow-y: auto;
+            .Message{
+                display: flex;
+                .Text{
+                    padding: 20px;
+                    border-radius: 20px;
+                    margin: 10px;
+                    max-width: 70%;
+                    text-wrap: wrap;
+                    word-break: break-all;
+                    letter-spacing: .05em;
+                    word-spacing: .4em;
+                }
+            }
+
+
+        }
+        .TextBox{
+            background-color: #002828;
+
+            display: flex;
+            align-items: center;
+            max-height: 80px;            
+            border-radius: 0px 20px 20px 0px;
+            overflow: hidden;
+            vertical-align: middle;
+            border: 2px solid rgb(40, 38, 38);
+            
+            textarea{
+                flex: 1;
+                color: inherit;
+                height: 100%;
+                resize: none;
+                background-color: unset;
+                border-radius: 0;
+                vertical-align: middle;
+                border: none;
+                padding: 4px;
+                &:focus{
+                    outline: none;
+                }
+            }
+            .SendMessageButton{
+                height: 100%;
+                color: black;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+}

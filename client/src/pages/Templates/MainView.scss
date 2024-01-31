@@ -1,0 +1,17 @@
+.MainView{
+    position: relative;
+    height: 90%;
+   .Header{
+
+    .GoBack{
+        cursor: pointer;
+    }
+    >h2{
+        margin: 0;
+    }
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    align-items: center;
+   }
+}

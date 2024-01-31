@@ -6,7 +6,6 @@ const AppWindow = ({children}: {children: ReactNode}) => {
 
   return (
     <div className='AppWindow'>
-        <div className='GoBack' onClick={()=>{yourStaffContext?.setAppName(null)}}><ArrowBackIosOutlinedIcon /></div>
         {children}
     </div>
   )

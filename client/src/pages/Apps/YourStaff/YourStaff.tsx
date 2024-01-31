@@ -7,44 +7,46 @@ import Documents from './DocumentsApp/Documents';
 import CurrentCases from './CurrentCasesApp/CurrentCases';
 import Calendar from './CalendarApp/Calendar';
 import Payments from './PaymentsApp/Payments';
+import MainView from '../../Templates/MainView';
+import { AppsContext, CurrentAppEnum } from '../../Templates/MainViewContext';
 const YourStaff = () => {
   const [header, setHeader] = useState<string>('Twoje sprawy')
   const [actualComponent, setActualComponent] = useState(<Default />)
   const yourStaffContext = useContext(YourStaffContext);
+  const Apps = useContext(AppsContext);
 
+ 
   useEffect(()=>{
-    switch(yourStaffContext?.appName){
-      case YourStaffAppEnum.Documents:
+    switch(Apps?.currentApp){
+      case CurrentAppEnum.documents:
         setActualComponent(<Documents />);
-        setHeader('Dokumenty');
         break;
-      case YourStaffAppEnum.ActualCase:
+      case CurrentAppEnum.yourCases:
         setActualComponent(<CurrentCases />);
-        setHeader('Sprawy w toku');
         break;
-      case YourStaffAppEnum.Calendar:
+      case CurrentAppEnum.calendar:
         setActualComponent(<Calendar />);
-        setHeader('Kalendarz');
         break;
-      case YourStaffAppEnum.Payments:
+      case CurrentAppEnum.payments:
         setActualComponent(<Payments />);
-        setHeader('Płatności');
         break;
       default:
         setActualComponent(<Default />);
-        setHeader('Twoje Sprawy');
         break;
     };
-  },[yourStaffContext?.appName])
+  },[Apps?.currentApp]);
   
   
+  
+
+
+
   return (
-    <div>
-        <h2>{header}</h2>
+    <MainView>
         <div className='YourStaffDashboardBox'>
           {actualComponent}
         </div>
-    </div>
+    </MainView>
   )
 }
 

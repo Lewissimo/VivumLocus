@@ -1,6 +1,7 @@
 import React, { ChangeEvent, DragEvent, useEffect, useState } from 'react'
 import './ReportCase.scss'
 import SendIcon from '@mui/icons-material/Send';
+import MainView from '../../Templates/MainView';
 const ReportCase = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
@@ -52,26 +53,26 @@ const ReportCase = () => {
 
 
   return (
-    <div className='ReportCaseBox'>
-      <h2>
-        Zgłość sprawę
-      </h2>
-      <form id='reportCase'>
-        <div className='titleBox'>
-          <label htmlFor='title'>Tytuł</label>
-          <input type='text' id='title' required minLength={3} maxLength={15}/>
-        </div>
-        <label htmlFor='taskDescription' id='tastDescriptionLabel'>Opisz dokładnie powstały problem</label>
-        <textarea id='taskDescription' required></textarea>
-        <label htmlFor='tastPhoto' id='fileLabel' onDragOver={handleDragOver}
-        style={dragCounter ? { height: '300px'} 
-        : {height: '70px', position: 'static'}}>{dragCounter ? "Upuść tutaj" : "Wybierz zdjęcie"}</label>
-        <input type='file' id='tastPhoto' required multiple   
-         onChange={handleFileChange} />
-         <div className='PhotosBox'></div>
-        <button type='submit'><SendIcon /></button>
-      </form>
-    </div>
+    <MainView>
+
+      <div className='ReportCaseBox'>
+        <form id='reportCase'>
+          <div className='titleBox'>
+            <label htmlFor='title'>Tytuł</label>
+            <input type='text' id='title' required minLength={3} maxLength={15}/>
+          </div>
+          <label htmlFor='taskDescription' id='tastDescriptionLabel'>Opisz dokładnie powstały problem</label>
+          <textarea id='taskDescription' required></textarea>
+          <label htmlFor='tastPhoto' id='fileLabel' onDragOver={handleDragOver}
+          style={dragCounter ? { height: '300px'} 
+          : {height: '70px', position: 'static'}}>{dragCounter ? "Upuść tutaj" : "Wybierz zdjęcie"}</label>
+          <input type='file' id='tastPhoto' required multiple   
+          onChange={handleFileChange} />
+          <div className='PhotosBox'></div>
+          <button type='submit'><SendIcon /></button>
+        </form>
+      </div>
+    </MainView>
   )
 }
 

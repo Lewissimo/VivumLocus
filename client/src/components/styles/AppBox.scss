@@ -9,17 +9,6 @@ $window_opacity: 0.166;
     letter-spacing: 0.04em;
 }
 
-.News{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    .MessBox{
-        margin: 0 20px;
-        overflow: hidden;
-        overflow-y: auto;
-        height: 100%;
-    }
-}
 
 .Fview{
     width: clamp(200px, 100%, 1200px);
@@ -35,9 +24,6 @@ $window_opacity: 0.166;
         height: 75vh;
         // inne style specyficzne dla tego Swiper
       }
-    .NewsBox{
-        flex: 1;
-        height: 75vh;
-    }
+  
 }
 

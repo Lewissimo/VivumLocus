@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import Fview from '../components/Fview';
-import Inventory from '../components/Apps/Inventory/Inventory';
-import Options from '../components/Options';
+import Inventory from './Apps/Inventory/Inventory';
+import Options from '../components/BottomNavigation/Options';
 
 const DashboardUser = () => {
   return (

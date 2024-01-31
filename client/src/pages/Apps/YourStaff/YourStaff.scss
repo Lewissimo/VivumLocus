@@ -4,9 +4,11 @@
     flex-direction: column;
     justify-content: center;
     padding: 25px;
+
 }
+
 .YourStaffDashboard{
-    
+    transform: translateY(-40px);
     max-height: 75vh;
     .YourStaffOption{
         display: flex;

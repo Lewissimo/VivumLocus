@@ -4,26 +4,27 @@ import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined
 import ScheduleOutlinedIcon from '@mui/icons-material/ScheduleOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
+import { AppsContext, CurrentAppEnum } from '../../Templates/MainViewContext';
 const Default = () => {
 
-const yourStaffContext = useContext(YourStaffContext);
+const Apps = useContext(AppsContext);
 
   return (
-    <div>
+    <div className='boxys'>
         <div className='YourStaffDashboard row'>
-            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{yourStaffContext?.setAppName(YourStaffAppEnum.Documents)}}>
+            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{Apps?.setCurrentApp(CurrentAppEnum.documents); Apps?.setShowBackArrow(<Default />)}}>
                 <ArticleOutlinedIcon />
                 <span>Dokumenty</span>
             </div>
-            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{yourStaffContext?.setAppName(YourStaffAppEnum.ActualCase)}}>
+            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{Apps?.setCurrentApp(CurrentAppEnum.yourCases); Apps?.setShowBackArrow(<Default />)}}>
                 <ScheduleOutlinedIcon />
                 <span>Sprawy w toku</span>
             </div>
-            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{yourStaffContext?.setAppName(YourStaffAppEnum.Calendar)}}>
+            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{Apps?.setCurrentApp(CurrentAppEnum.calendar); Apps?.setShowBackArrow(<Default />)}}>
                 <CalendarMonthOutlinedIcon />
                 <span>Kalendarz</span>
             </div>
-            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{yourStaffContext?.setAppName(YourStaffAppEnum.Payments)}}>
+            <div className='YourStaffOption col-12 col-sm-6 col-lg-3' onClick={()=>{Apps?.setCurrentApp(CurrentAppEnum.payments); Apps?.setShowBackArrow(<Default />)}}>
                 <PaymentsOutlinedIcon />
                 <span>Płatności</span>
             </div>
