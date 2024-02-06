@@ -1,13 +1,21 @@
 import React from 'react'
+import { newsLayout } from '../Context/NewsLoader/NewsActions'
 
-const NewsMessage = () => {
+const NewsMessage = ({news} : {news: newsLayout}) => {
+  
+  console.log(typeof news.date); 
+  const dateObject = new Date(news.date)
+
+  const day = String(dateObject.getDate()).padStart(2, '0');
+  const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+  const year = dateObject.getFullYear();
   return (
     <>
         <li className='row'>
-            <h3 className='col-6'>Enea</h3>
-            <div className='col-6'>Data: <span className='date'>23.04.2024</span></div>
+            <h3 className='col-6'>{news.title}</h3>
+            <div className='col-6'>Data: <span className='date'>{`${day}.${month}.${year}`}</span></div>
             <p className='col-12'>
-                W dniu Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum reprehenderit ducimus ea neque, exercitationem rerum! Reiciendis consequatur hic aspernatur, esse exercitationem laboriosam, molestias eligendi harum animi nihil provident suscipit ipsa.
+              {news.content}
             </p>
         <hr/>
         </li>
