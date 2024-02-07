@@ -1,64 +1,69 @@
 export type contactLayout = {
   f_name: string,
   l_name: string,
+  id: string,
+  description: string,
+  phone: string,
+  email: string,
+  photoURL: string
 }
 
-export enum newsReducerEnum{
+export enum contactReducerEnum{
   REMOVE,
   ADD,
   EDIT,
   SET
 }
 
-interface setNewsINT {
-  type: newsReducerEnum.SET;
-  payload: newsLayout[]; 
+interface setContactINT {
+  type: contactReducerEnum.SET;
+  payload: contactLayout[]; 
 }
 
-interface deleteMessageINT {
-  type: newsReducerEnum.REMOVE;
+interface deleteContactINT {
+  type: contactReducerEnum.REMOVE;
   payload: string;
 }
-interface addMessageINT {
-  type: newsReducerEnum.ADD;
-  payload: newsLayout;
+interface addContactINT {
+  type: contactReducerEnum.ADD;
+  payload: contactLayout;
 }
-interface editMessageINT {
-  type: newsReducerEnum.EDIT;
+interface editContactINT {
+  type: contactReducerEnum.EDIT;
   payload: {
-      message: newsLayout,
+      contact: contactLayout,
       id: string
   };
 }
 
-export const setNewsINT = (news: newsLayout[]) => {
+export const setContactINT = (contact: contactLayout[]) => {
   return{
-      type: newsReducerEnum.SET,
-      payload: news
+      type: contactReducerEnum.SET,
+      payload: contact
   }
 }
 
 
-export const deleteMessageINT = (id: string) => {
+export const deleteContactINT = (id: string) => {
   return {
-      type: newsReducerEnum.REMOVE,
+      type: contactReducerEnum.REMOVE,
       payload: id
   }
 }
-export const addMessageINT = (message: newsLayout) => {
+export const addContactINT = (contact: contactLayout) => {
   return {
-      type: newsReducerEnum.ADD,
-      payload: message
+      type: contactReducerEnum.ADD,
+      payload: contact
   }
 }
-export const editMessageINT= (message: newsLayout, id: string) => {
+export const editContactINT= (contact: contactLayout, id: string) => {
   return {
-      type: newsReducerEnum.EDIT,
+      type: contactReducerEnum.EDIT,
       payload: {
-          message,
+        contact,
           id
       }
   }
 }
 
-export type NewsAction = deleteMessageINT | addMessageINT | editMessageINT | setNewsINT;
+export type ContactAction = deleteContactINT | addContactINT | editContactINT | setContactINT;

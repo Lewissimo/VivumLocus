@@ -7,14 +7,15 @@ import './MainView.scss'
 
 const MainView = ({children} : {children : ReactNode}) => {
   const Apps = useContext(AppsContext);
+  console.log(Apps?.currentApp)
   return (
       <div className='MainView'>
         <div className='Header'>{
         Apps?.showBackArrow 
         ? 
-        <div className='GoBack' onClick={()=>{Apps.setShowBackArrow(undefined); Apps.setCurrentApp(CurrentAppEnum.YourStaff) }}><ArrowBackIosOutlinedIcon/></div> 
+        <div className='GoBack' onClick={()=>{ Apps.setCurrentApp(Apps.showBackArrow as CurrentAppEnum); Apps.setShowBackArrow(undefined);}}><ArrowBackIosOutlinedIcon/></div> 
         : null}
-        <h2 className='AppName'>{Apps?.currentApp}</h2></div>
+        <h2 className='AppName'>{Apps?.currentApp !== "" ?  Apps?.currentApp : Apps.customTitle}</h2></div>
       {children}
       </div>
   )

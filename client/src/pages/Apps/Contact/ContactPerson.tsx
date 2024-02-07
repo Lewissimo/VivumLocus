@@ -3,16 +3,14 @@ import img from '../../../assets/matematyka.jpg';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import ContactInfo, { typeContactInfoEnum } from './ContactInfo';
-import ContactContext from './ContactContext';
 
 const ContactPerson = () => {
-    const ContactContextValue = useContext(ContactContext);
     const [hoverMail, setHoverMail] = useState(false);
     const [hoverPhone, setHoverPhone] = useState(false);
     return (
         <div className='ContactPerson row'>
         <span className='row col-12 justify-content-center Person' onClick={()=>{
-            ContactContextValue?.loadDescription('data');
+            console.log('sad');
         }}>
             <div className='PhotoBox col-12'>
                 <img alt='' src={img} width={100}/>

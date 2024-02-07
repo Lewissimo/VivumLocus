@@ -5,41 +5,32 @@ import { db } from '../index.js';
 import validator from 'validator';
 
 export const verifyTokenUser = (req, res, next) => {
-    // Pobierz token z nagłówków żądania
     const token = req.headers['authorization'];
-
-    // Sprawdź, czy token nie jest pusty
     if (!token) {
-        return res.status(403).send('Token jest wymagany do autoryzacji.');
+        return res.status(403).send('token need');
     }
 
     try {
-        // Weryfikuj token używając sekretu
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        // Przypisz dekodowane dane z tokena do obiektu żądania, aby były dostępne w następnych middleware/funkcjach
         req.user = decoded;
     } catch (err) {
-        return res.status(401).send('Nieprawidłowy token.');
+        return res.status(401).send('nisdfkos');
     }
 
     next();
 };
 export const verifyTokenAdmin = (req, res, next) => {
-    // Pobierz token z nagłówków żądania
     const token = req.headers['authorization'];
 
-    // Sprawdź, czy token nie jest pusty
     if (!token) {
-        return res.status(403).send('Token jest wymagany do autoryzacji.');
+        return res.status(403).send('tonek need');
     }
 
     try {
-        // Weryfikuj token używając sekretu
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        // Przypisz dekodowane dane z tokena do obiektu żądania, aby były dostępne w następnych middleware/funkcjach
         req.user = decoded;
     } catch (err) {
-        return res.status(401).send('Nieprawidłowy token.');
+        return res.status(401).send('bad token');
     }
     if(req.user.role === 'admin'){
 
@@ -50,21 +41,17 @@ export const verifyTokenAdmin = (req, res, next) => {
     }
 };
 export const verifyTokenEmployee = (req, res, next) => {
-    // Pobierz token z nagłówków żądania
     const token = req.headers['authorization'];
 
-    // Sprawdź, czy token nie jest pusty
     if (!token) {
-        return res.status(403).send('Token jest wymagany do autoryzacji.');
+        return res.status(403).send('token need');
     }
 
     try {
-        // Weryfikuj token używając sekretu
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        // Przypisz dekodowane dane z tokena do obiektu żądania, aby były dostępne w następnych middleware/funkcjach
         req.user = decoded;
     } catch (err) {
-        return res.status(401).send('Nieprawidłowy token.');
+        return res.status(401).send('uncorect token');
     }
 
     if((req.user.role === 'coordinator')||(req.user.role === 'admin')){
@@ -85,11 +72,11 @@ export const loginUser = async (req, res) => {
     const sql = 'SELECT * FROM users WHERE email = ?';
     db.query(sql, [email], async (err, results) => {
         if (err) {
-            return res.status(500).json({ message: 'Błąd podczas wyszukiwania użytkownika.', error: err });
+            return res.status(500).json({ message: 'db error', error: err });
         }
 
         if (results.length === 0) {
-            return res.status(401).json({ message: 'Nie znaleziono użytkownika z podanym adresem email.' });
+            return res.status(401).json({ message: 'not found' });
         }
 
         const user = results[0];
@@ -112,10 +99,10 @@ export const loginUser = async (req, res) => {
 
 
 
-const registerUser = async (req, res) => {
-    const { f_name, l_name, email, password, adres, photoURL, label } = req.body;
+const registerAdress = async (req, res) => {
+    const { login, password, f_name, l_name, phone, age, address, description, rights, email, photo} = req.body;
     
-    if(!(f_name && l_name && password && adres)){
+    if(!(f_name && l_name && password && )){
         return res.status(400).json('Missing argument')
     }
     if(!validator.isEmail(email)){
@@ -130,10 +117,32 @@ const registerUser = async (req, res) => {
         if(err) {
             return res.status(500).send(err);
         }
-        res.status(200).send('Wiadomość została zaktualizowana.');
+        res.status(200).send('ok');
     });
     
     
 };
+
+const registerAdmin = async (req, res) => {
+
+}
+
+export const getAdminsData = async (req, res) => {
+    const sql = `
+    SELECT users.*, admin_info.*
+    FROM users
+    LEFT JOIN admin_info ON users.id = admin_info.user_id
+    WHERE users.label = 'admin';
+    `
+    db.query(sql, [], (err, result) =>{
+        if(err){
+            return res.status(500).send(err);
+        }
+        res.status(200).json(result);
+    });
+}
+
+
+
 
 export default registerUser;

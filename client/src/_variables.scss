@@ -3,3 +3,16 @@ $color2: #bcdef8;
 $color3: rgb(29, 93, 105);
 
 $breakPoint: 720px;
+
+@keyframes showA {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+%showAnim{
+    animation: .3s showA;
+}
